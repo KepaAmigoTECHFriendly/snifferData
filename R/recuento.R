@@ -76,6 +76,26 @@ recuento <- function(){
                        verify= FALSE,
                        encode = "json",verbose()
     )
+
+    #ACTUALIZACIÓN ATRIBUTOS
+    url <- paste("https://plataforma.destinosalnes.com/api/plugins/telemetry/DEVICE/",id_dispositivo,"/attributes/SERVER_SCOPE",sep = "")
+    json_envio_plataforma <- paste('{"active":', TRUE,'}',sep = "")
+    post <- httr::POST(url = url,
+                       add_headers("Content-Type"="application/json","Accept"="application/json","X-Authorization"=auth_thb),
+                       body = json_envio_plataforma,
+                       verify= FALSE,
+                       encode = "json",verbose()
+    )
+    fecha_inactividad <- Sys.time()
+    fecha_inactividad <- ymd_hms(fecha_inactividad)
+    fecha_inactividad <- as.numeric(fecha_inactividad) * 1000
+    json_envio_plataforma <- paste('{"lastActivityTime":', fecha_inactividad,'}',sep = "")
+    post <- httr::POST(url = url,
+                       add_headers("Content-Type"="application/json","Accept"="application/json","X-Authorization"=auth_thb),
+                       body = json_envio_plataforma,
+                       verify= FALSE,
+                       encode = "json",verbose()
+    )
   }
 
   return(1)
