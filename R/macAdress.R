@@ -19,7 +19,7 @@ macAdress <- function(){
   # PETICIÓN TOKENs THB
   # ------------------------------------------------------------------------------
 
-  cuerpo <- '{"username":"kepa@techfriendly.es","password":"kepatech"}'
+  cuerpo <- '{"username":"kepa@produccion.es","password":"kepatech"}'
   post <- httr::POST(url = "https://plataforma.destinosalnes.com/api/auth/login",
                      add_headers("Content-Type"="application/json","Accept"="application/json"),
                      body = cuerpo,
@@ -135,9 +135,9 @@ macAdress <- function(){
   #mac <- data$macs
   #rssi <- data$rssi
 
-  #ids_dispositivos_conteo <- c("47a5e0d1-2006-11ee-ae58-bfdaa26a158a","47a607e0-2006-11ee-ae58-bfdaa26a158a","47a592b0-2006-11ee-ae58-bfdaa26a158a","47a51d81-2006-11ee-ae58-bfdaa26a158a")
+  ids_dispositivos_conteo <- c("47a5e0d1-2006-11ee-ae58-bfdaa26a158a","47a607e0-2006-11ee-ae58-bfdaa26a158a","47a592b0-2006-11ee-ae58-bfdaa26a158a","47a51d81-2006-11ee-ae58-bfdaa26a158a")
 
-  ids_dispositivos_conteo <- c("f0050810-dc75-11ee-97c4-3917c37b52f5")
+  #ids_dispositivos_conteo <- c("f0050810-dc75-11ee-97c4-3917c37b52f5")
 
   for(i in 1:length(ids_dispositivos_conteo)){
     print(i)
