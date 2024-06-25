@@ -140,41 +140,7 @@ macAdress <- function(){
 
   for(i in 1:length(ids_dispositivos_conteo)){
 
-    if(i == 1){
-      ping <- system(paste("ping -c 1", "77.211.27.131"), intern = FALSE)
-      if(ping != 0){
-        next
-      }
-    }
 
-    if(i == 2){
-      ping <- system(paste("ping -c 1", "81.60.227.123"), intern = FALSE)
-      if(ping != 0){
-        next
-      }
-    }
-
-    if(i == 3){
-      ping <- system(paste("ping -c 1", "81.60.227.143"), intern = FALSE)
-      if(ping != 0){
-        next
-      }
-    }
-
-    if(i == 4){
-      ping <- system(paste("ping -c 1", "81.60.227.141"), intern = FALSE)
-      if(ping != 0){
-        next
-      }
-    }
-
-
-    if(i == 5){
-      ping <- system(paste("ping -c 1", "81.60.227.199"), intern = FALSE)
-      if(ping != 0){
-        next
-      }
-    }
 
 
     print(i)
