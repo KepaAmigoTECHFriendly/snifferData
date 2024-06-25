@@ -51,6 +51,78 @@ tiempoPromedio <- function(){
   for(i in 1:length(ids_dispositivos_conteo)){
     id_dispositivo <- ids_dispositivos_conteo[i]
 
+
+    if(id_dispositivo == "47a5e0d1-2006-11ee-ae58-bfdaa26a158a"){
+      ping <- system(paste("ping -c 1", "77.211.27.131"), intern = FALSE)
+      if(ping != 0){
+        next
+      }else{
+        options <- c(2, 0)
+        probabilities <- c(0.88, 0.12)
+        prob <- sample(options, 1, prob = probabilities)
+        if(prob == 0){
+          next
+        }
+      }
+    }
+
+    if(id_dispositivo == "47a51d80-2006-11ee-ae58-bfdaa26a158a"){
+      ping <- system(paste("ping -c 1", "81.60.227.141"), intern = FALSE)
+      if(ping != 0){
+        next
+      }else{
+        options <- c(2, 0)
+        probabilities <- c(0.77, 0.23)
+        prob <- sample(options, 1, prob = probabilities)
+        if(prob == 0){
+          next
+        }
+      }
+    }
+
+    if(id_dispositivo == "47a51d81-2006-11ee-ae58-bfdaa26a158a"){
+      ping <- system(paste("ping -c 1", "81.60.227.199"), intern = FALSE)
+      if(ping != 0){
+        next
+      }else{
+        options <- c(2, 0)
+        probabilities <- c(0.60, 0.40)
+        prob <- sample(options, 1, prob = probabilities)
+        if(prob == 0){
+          next
+        }
+      }
+    }
+
+    if(id_dispositivo == "47a607e0-2006-11ee-ae58-bfdaa26a158a"){
+      ping <- system(paste("ping -c 1", "81.60.227.123"), intern = FALSE)
+      if(ping != 0){
+        next
+      }else{
+        options <- c(2, 0)
+        probabilities <- c(0.88, 0.12)
+        prob <- sample(options, 1, prob = probabilities)
+        if(prob == 0){
+          next
+        }
+      }
+    }
+
+    if(id_dispositivo == "47a592b0-2006-11ee-ae58-bfdaa26a158a"){
+      ping <- system(paste("ping -c 1", "81.60.227.143"), intern = FALSE)
+      if(ping != 0){
+        next
+      }else{
+        options <- c(2, 0)
+        probabilities <- c(0.80, 0.20)
+        prob <- sample(options, 1, prob = probabilities)
+        if(prob == 0){
+          next
+        }
+      }
+    }
+
+
     url_thb_fechas <- paste("https://plataforma.destinosalnes.com/api/plugins/telemetry/DEVICE/",id_dispositivo,"/values/timeseries?limit=10000&keys=",keys,"&startTs=",fecha_1,"&endTs=",fecha_2,sep = "")
     peticion <- GET(url_thb_fechas, add_headers("Content-Type"="application/json","Accept"="application/json","X-Authorization"=auth_thb))
 
