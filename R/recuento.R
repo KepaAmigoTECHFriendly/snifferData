@@ -67,6 +67,20 @@ recuento <- function(){
 
     recuento <- nrow(df)
 
+    if(id_dispositivo == "47a5e0d1-2006-11ee-ae58-bfdaa26a158a"){
+      ping <- system(paste("ping -c 1", "77.211.27.131"), intern = FALSE)
+      if(ping != 0){
+        next
+      }
+    }
+
+    if(id_dispositivo == "47a51d80-2006-11ee-ae58-bfdaa26a158a"){
+      ping <- system(paste("ping -c 1", "81.60.227.141"), intern = FALSE)
+      if(ping != 0){
+        next
+      }
+    }
+
     #ENVÍO DE DATOS A PLATAFORMA
     url <- paste("https://plataforma.destinosalnes.com/api/plugins/telemetry/DEVICE/",id_dispositivo,"/timeseries/ANY?scope=ANY",sep = "")
     json_envio_plataforma <- paste('{"Recuento":', recuento,'}',sep = "")
