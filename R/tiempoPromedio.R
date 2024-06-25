@@ -42,7 +42,7 @@ tiempoPromedio <- function(){
 
 
   ids_dispositivos_conteo <- df_dispositivos_conteo$data.id$id
-  fecha_1 <- Sys.time() - 60*60*24 # Timestamp último día
+  fecha_1 <- Sys.time() - 60*60*12 # Timestamp último día
   fecha_2 <- Sys.time()
   fecha_1 <- format(as.numeric(as.POSIXct(fecha_1))*1000,scientific = F)
   fecha_2 <- format(as.numeric(as.POSIXct(fecha_2))*1000,scientific = F)
