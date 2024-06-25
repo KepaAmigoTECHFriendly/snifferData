@@ -121,7 +121,7 @@ macAdress <- function(){
 
   # Función para generar el vector de fechas
   generate_dates <- function(n) {
-    current_time <- Sys.time() + 7200
+    current_time <- Sys.time()
     start_time <- current_time - 300  # Hace 5 minutos
     random_seconds <- runif(n, min = 0, max = 300)
     random_times <- current_time - random_seconds
