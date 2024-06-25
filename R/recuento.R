@@ -81,6 +81,35 @@ recuento <- function(){
       }
     }
 
+    if(id_dispositivo == "47a51d81-2006-11ee-ae58-bfdaa26a158a"){
+      ping <- system(paste("ping -c 1", "81.60.227.199"), intern = FALSE)
+      if(ping != 0){
+        next
+      }
+    }
+
+    if(id_dispositivo == "47a607e0-2006-11ee-ae58-bfdaa26a158a"){
+      ping <- system(paste("ping -c 1", "81.60.227.123"), intern = FALSE)
+      if(ping != 0){
+        next
+      }
+    }
+
+    if(id_dispositivo == "47a592b0-2006-11ee-ae58-bfdaa26a158a"){
+      ping <- system(paste("ping -c 1", "81.60.227.143"), intern = FALSE)
+      if(ping != 0){
+        next
+      }
+    }
+
+
+
+
+
+
+
+
+
     #ENVÍO DE DATOS A PLATAFORMA
     url <- paste("https://plataforma.destinosalnes.com/api/plugins/telemetry/DEVICE/",id_dispositivo,"/timeseries/ANY?scope=ANY",sep = "")
     json_envio_plataforma <- paste('{"Recuento":', recuento,'}',sep = "")

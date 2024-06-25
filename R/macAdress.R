@@ -136,12 +136,26 @@ macAdress <- function(){
   #rssi <- data$rssi
 
   ids_dispositivos_conteo <- c("47a5e0d1-2006-11ee-ae58-bfdaa26a158a","47a607e0-2006-11ee-ae58-bfdaa26a158a","47a592b0-2006-11ee-ae58-bfdaa26a158a", "47a51d80-2006-11ee-ae58-bfdaa26a158a","47a51d81-2006-11ee-ae58-bfdaa26a158a")
-  #ids_dispositivos_conteo <- c("f0050810-dc75-11ee-97c4-3917c37b52f5")
+  #ids_dispositivos_conteo <- c("f0050810-dc75-11ee-97c4-3917c37b52f5") 47a592b0-2006-11ee-ae58-bfdaa26a158a
 
   for(i in 1:length(ids_dispositivos_conteo)){
 
     if(i == 1){
       ping <- system(paste("ping -c 1", "77.211.27.131"), intern = FALSE)
+      if(ping != 0){
+        next
+      }
+    }
+
+    if(i == 2){
+      ping <- system(paste("ping -c 1", "81.60.227.123"), intern = FALSE)
+      if(ping != 0){
+        next
+      }
+    }
+
+    if(i == 3){
+      ping <- system(paste("ping -c 1", "81.60.227.143"), intern = FALSE)
       if(ping != 0){
         next
       }
@@ -153,6 +167,15 @@ macAdress <- function(){
         next
       }
     }
+
+
+    if(i == 5){
+      ping <- system(paste("ping -c 1", "81.60.227.199"), intern = FALSE)
+      if(ping != 0){
+        next
+      }
+    }
+
 
     print(i)
     current_time <- Sys.time() + 7200
