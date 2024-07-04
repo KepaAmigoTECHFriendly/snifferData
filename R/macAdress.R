@@ -135,75 +135,19 @@ macAdress <- function(){
   #mac <- data$macs
   #rssi <- data$rssi
 
-  ids_dispositivos_conteo <- c("47a5e0d1-2006-11ee-ae58-bfdaa26a158a","47a607e0-2006-11ee-ae58-bfdaa26a158a","47a592b0-2006-11ee-ae58-bfdaa26a158a", "47a51d80-2006-11ee-ae58-bfdaa26a158a")
-  #ids_dispositivos_conteo <- c("f0050810-dc75-11ee-97c4-3917c37b52f5")
+  #ids_dispositivos_conteo <- c("47a5e0d1-2006-11ee-ae58-bfdaa26a158a","47a607e0-2006-11ee-ae58-bfdaa26a158a","47a592b0-2006-11ee-ae58-bfdaa26a158a", "47a51d80-2006-11ee-ae58-bfdaa26a158a")
+  ids_dispositivos_conteo <- c("47a56ba1-2006-11ee-ae58-bfdaa26a158a")
 
   for(i in 1:length(ids_dispositivos_conteo)){
     id_dispositivo <- ids_dispositivos_conteo[i]
 
-    if(id_dispositivo == "47a5e0d1-2006-11ee-ae58-bfdaa26a158a"){
-      ping <- system(paste("ping -c 1", "77.211.27.131"), intern = FALSE)
-      if(ping != 0){
-        next
-      }else{
-        options <- c(2, 0)
-        probabilities <- c(0.88, 0.12)
-        prob <- sample(options, 1, prob = probabilities)
-        if(prob == 0){
-          next
-        }
-      }
-    }
-
-    if(id_dispositivo == "47a51d80-2006-11ee-ae58-bfdaa26a158a"){
-      ping <- system(paste("ping -c 1", "81.60.227.141"), intern = FALSE)
-      if(ping != 0){
-        next
-      }else{
-        options <- c(2, 0)
-        probabilities <- c(0.77, 0.23)
-        prob <- sample(options, 1, prob = probabilities)
-        if(prob == 0){
-          next
-        }
-      }
-    }
-
-    if(id_dispositivo == "47a51d81-2006-11ee-ae58-bfdaa26a158a"){
-      ping <- system(paste("ping -c 1", "81.60.227.199"), intern = FALSE)
+    if(id_dispositivo == "47a56ba1-2006-11ee-ae58-bfdaa26a158a"){
+      ping <- 0
       if(ping != 0){
         next
       }else{
         options <- c(2, 0)
         probabilities <- c(0.60, 0.40)
-        prob <- sample(options, 1, prob = probabilities)
-        if(prob == 0){
-          next
-        }
-      }
-    }
-
-    if(id_dispositivo == "47a607e0-2006-11ee-ae58-bfdaa26a158a"){
-      ping <- system(paste("ping -c 1", "81.60.227.123"), intern = FALSE)
-      if(ping != 0){
-        next
-      }else{
-        options <- c(2, 0)
-        probabilities <- c(0.88, 0.12)
-        prob <- sample(options, 1, prob = probabilities)
-        if(prob == 0){
-          next
-        }
-      }
-    }
-
-    if(id_dispositivo == "47a592b0-2006-11ee-ae58-bfdaa26a158a"){
-      ping <- system(paste("ping -c 1", "81.60.227.143"), intern = FALSE)
-      if(ping != 0){
-        next
-      }else{
-        options <- c(2, 0)
-        probabilities <- c(0.80, 0.20)
         prob <- sample(options, 1, prob = probabilities)
         if(prob == 0){
           next
@@ -218,7 +162,7 @@ macAdress <- function(){
       data <- generate_data(current_time)
     }else{
       #data <- generate_data_futbol(current_time)
-      data <- generate_data_futbol(current_time)
+      data <- generate_data(current_time)
     }
 
     mac <- data$macs
