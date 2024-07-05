@@ -136,7 +136,7 @@ macAdress <- function(){
   #rssi <- data$rssi
 
   #ids_dispositivos_conteo <- c("47a5e0d1-2006-11ee-ae58-bfdaa26a158a","47a607e0-2006-11ee-ae58-bfdaa26a158a","47a592b0-2006-11ee-ae58-bfdaa26a158a", "47a51d80-2006-11ee-ae58-bfdaa26a158a")
-  ids_dispositivos_conteo <- c("47a56ba1-2006-11ee-ae58-bfdaa26a158a")
+  ids_dispositivos_conteo <- c("47a56ba1-2006-11ee-ae58-bfdaa26a158a","47a607e0-2006-11ee-ae58-bfdaa26a158a")
 
   for(i in 1:length(ids_dispositivos_conteo)){
     id_dispositivo <- ids_dispositivos_conteo[i]
