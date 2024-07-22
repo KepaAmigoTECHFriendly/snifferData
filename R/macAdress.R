@@ -81,7 +81,7 @@ macAdress <- function(){
 
     # Generar el vector de MACs y RSSI
     macs <- replicate(n, generate_mac())
-    rssi <- sample(57:93, n, replace = TRUE)
+    rssi <- sample(57:98, n, replace = TRUE)
     dates <- generate_dates(n)
 
     return(list(macs = macs, rssi = rssi, dates = dates))
@@ -113,7 +113,7 @@ macAdress <- function(){
 
     # Generar el vector de MACs y RSSI
     macs <- replicate(n, generate_mac())
-    rssi <- sample(57:93, n, replace = TRUE)
+    rssi <- sample(57:98, n, replace = TRUE)
     dates <- generate_dates(n)
 
     return(list(macs = macs, rssi = rssi,dates = dates))
@@ -136,7 +136,7 @@ macAdress <- function(){
   #rssi <- data$rssi
 
   #ids_dispositivos_conteo <- c("47a5e0d1-2006-11ee-ae58-bfdaa26a158a","47a607e0-2006-11ee-ae58-bfdaa26a158a","47a592b0-2006-11ee-ae58-bfdaa26a158a", "47a51d80-2006-11ee-ae58-bfdaa26a158a")
-  ids_dispositivos_conteo <- c("47a56ba1-2006-11ee-ae58-bfdaa26a158a","47a607e0-2006-11ee-ae58-bfdaa26a158a")
+  ids_dispositivos_conteo <- c("47a56ba1-2006-11ee-ae58-bfdaa26a158a")
 
   for(i in 1:length(ids_dispositivos_conteo)){
     id_dispositivo <- ids_dispositivos_conteo[i]
@@ -147,7 +147,7 @@ macAdress <- function(){
         next
       }else{
         options <- c(2, 0)
-        probabilities <- c(0.60, 0.40)
+        probabilities <- c(0.80, 0.20)
         prob <- sample(options, 1, prob = probabilities)
         if(prob == 0){
           next
